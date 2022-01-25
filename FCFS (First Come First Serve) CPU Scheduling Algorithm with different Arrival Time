@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int p[4],bt[4],d[4],at[4],i,temp1,j,temp2,temp3;
+    for(i=0;i<4;i++)
+    {
+    scanf("%d %d %d",&p[i],&at[i],&bt[i]);
+    }
+     for (i=0;i<4;++i) 
+        {
+         for (j=0;j<4;++j)
+            {
+                if (at[i]<at[j]) 
+                {
+                    temp1=at[i];
+                    at[i]=at[j];
+                    at[j]=temp1;
+                    temp2=p[i];
+                    p[i]=p[j];
+                    p[j]=temp2;
+                    temp3=bt[i];
+                    bt[i]=bt[j];
+                    bt[j]=temp3;
+                }
+            }
+        }
+    int t=0;
+    for(int i=0;i<4;i++)
+    {
+        if(i==0)
+            d[i]=0;
+        else
+           d[p[i]-1]=t-at[i];
+        t+=bt[i];
+    }
+     for(int i=0;i<3;i++)
+    {
+       printf("P%d (WT=%d), ",i+1,d[i]);
+    }
+    printf("P4 (WT=%d)",d[3]);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
