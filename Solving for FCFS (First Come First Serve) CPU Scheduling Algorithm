@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int bt[4],wt[4],at=0,i;
+    for(i=0;i<4;i++)
+    {
+    scanf("%d",&bt[i]);
+        wt[i]=0;
+    }
+    for(i=0;i<4;i++)
+    {
+        wt[i]=wt[i]+at;
+        at=at+bt[i];
+    }
+    for(i=0;i<4;i++)
+    {
+        if(i<3)
+        {
+            printf("P%d (WT=%d), ",i+1,wt[i]);
+    }
+        else
+        {
+    printf("P%d (WT=%d)",i+1,wt[i]);
+        }
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
