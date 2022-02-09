@@ -1,0 +1,9 @@
+import math
+T = int(input())
+for _ in range(T):
+   n,k = list(map(int,input().split()))
+   largest_x=1
+   for x in range(2,1000):
+      if math.factorial(n) % k**x ==0:
+          largest_x =x
+   print(largest_x)
