@@ -1,0 +1,44 @@
+print("Enter array size:")
+n=int(input())
+li=[]
+print("Enter array elements:")
+
+for i in range(0,n):
+    li.append(int(input()))
+print("Enter element to be searched:");
+search=int(input())
+
+count=0
+for i in range(0,n):
+    if li[i]<li[0]:
+        break
+    else:
+        count=count+1
+start1=count
+end1=n-1
+start2=0
+end2=count
+flag=0
+while start1<=end1:
+    mid=(start1+end1)//2
+    if(li[mid]==search):
+        print("Element found at ",mid)
+        flag=1
+        break
+    elif(li[mid]>search):
+        end=mid-1
+    else:
+        start=mid+1
+if(flag==0):
+    while start2<=end2:
+        mid=(start2+end2)//2
+        if(li[mid]==search):
+            print("Element found at ",mid)
+            flag=1
+            break
+        elif(li[mid]>search):
+            end=mid-1
+        else:
+            start=mid+1
+if flag==0:
+    print("Element not found")
